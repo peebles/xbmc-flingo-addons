@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.service.flingo"
+       name="FlingoTV Play"
+       version="1.1.0"
+       provider-name="Andrew Peebles">
+  <requires>
+    <import addon="xbmc.python" version="2.0"/>
+    <import addon="script.module.simplejson" version="2.0.10" optional="true"/>
+  </requires>
+  <extension point="xbmc.service"
+             library="default.py" start="login">
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">FlingoTV Play plays a video when flung to.</summary>
+    <description lang="en">This service runs in the background waiting for a video to be flung to this device.  When a new video arrives, it can be played immediately, ignored completely, or the user may be told that it has arrived.  These choices can be made in the configure screen.</description>
+  </extension>
+</addon>

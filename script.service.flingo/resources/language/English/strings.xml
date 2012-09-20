@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <string id="001">General</string>
+    <string id="002">When Flung To</string>
+    <string id="003">Play from Queue</string>
+    <string id="101">Play It</string>
+    <string id="102">Prompt Me</string>
+    <string id="103">Ignore It</string>
+    <string id="201">TOP</string>
+    <string id="202">BOTTOM</string>
+</strings>

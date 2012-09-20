@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <!-- General -->
+  <category label="001">
+    <setting label="002" type="enum" id="fopt" 
+	     lvalues="101|102|103" default="0"/>
+    <setting label="003" type="enum" id="qopt" 
+	     lvalues="201|202" default="1"/>
+  </category>
+</settings>
