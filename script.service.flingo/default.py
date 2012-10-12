@@ -100,8 +100,8 @@ class Service:
         return data
 
     def longpoll(self):
-        params = urllib.urlencode({'guid': self.guid, 'wait': '20'})
-        conn = httplib.HTTPConnection("flingo.tv", timeout=40)
+        params = urllib.urlencode({'guid': self.guid, 'wait': '3000'})
+        conn = httplib.HTTPConnection("flingo.tv", timeout=30)
         conn.request("POST", "/fling/longpoll", params, self.post_headers)
         try:
             res = conn.getresponse()
