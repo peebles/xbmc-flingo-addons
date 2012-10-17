@@ -75,9 +75,9 @@ class Service:
                                    'dev_name': 'XBMC Queue', 
                                    'dev_description': 'XBMC Flingo Queue on ' + hostname, 
                                    'version': '0.1'})
-        conn = httplib.HTTPConnection("flingo.tv")
-        conn.request("POST", "/fling/announce", params, self.post_headers)
         try:
+            conn = httplib.HTTPConnection("flingo.tv")
+            conn.request("POST", "/fling/announce", params, self.post_headers)
             res = conn.getresponse()
         except:
             return({'error': 'Failed to send announcement'})
@@ -94,9 +94,9 @@ class Service:
         return data
 
     def discover(self):
-        conn = httplib.HTTPConnection("flingo.tv")
-        conn.request("POST", "/fling/discover")
         try:
+            conn = httplib.HTTPConnection("flingo.tv")
+            conn.request("POST", "/fling/discover")
             res = conn.getresponse()
         except:
             return({'error': 'Failed to discover'})
@@ -114,9 +114,9 @@ class Service:
 
     def longpoll(self):
         params = urllib.urlencode({'guid': self.guid})
-        conn = httplib.HTTPConnection("flingo.tv")
-        conn.request("POST", "/fling/longpoll", params, self.post_headers)
         try:
+            conn = httplib.HTTPConnection("flingo.tv")
+            conn.request("POST", "/fling/longpoll", params, self.post_headers)
             res = conn.getresponse()
         except:
             return({'error': 'Failed to longpoll'})
@@ -139,9 +139,9 @@ class Service:
         if num != None:
             p['howmany'] = num
         params = urllib.urlencode(p)
-        conn = httplib.HTTPConnection("flingo.tv")
-        conn.request("POST", "/fling/queue", params, self.post_headers)
         try:
+            conn = httplib.HTTPConnection("flingo.tv")
+            conn.request("POST", "/fling/queue", params, self.post_headers)
             res = conn.getresponse()
         except:
             return({'error': 'Failed to get queue'})
@@ -160,9 +160,9 @@ class Service:
 
     def rm(self,id):
         params = urllib.urlencode({'guid': self.guid, 'link_id': id})
-        conn = httplib.HTTPConnection("flingo.tv")
-        conn.request("POST", "/fling/remove_queue", params, self.post_headers)
         try:
+            conn = httplib.HTTPConnection("flingo.tv")
+            conn.request("POST", "/fling/remove_queue", params, self.post_headers)
             res = conn.getresponse()
         except:
             return({'error': 'Failed to remove from queue'})
@@ -181,9 +181,9 @@ class Service:
     def get_vimeo_url(self,data):
         context = data['deobfuscator_context']
         params = urllib.urlencode({'video_id': context})
-        conn = httplib.HTTPConnection("flingo.tv")
-        conn.request("POST", "/api/vimeo", params, self.post_headers)
         try:
+            conn = httplib.HTTPConnection("flingo.tv")
+            conn.request("POST", "/api/vimeo", params, self.post_headers)
             res = conn.getresponse()
         except:
             return None
